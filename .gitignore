@@ -41,3 +41,6 @@ tests/doctest
 
 # Visual studio code config files
 .vscode
+
+# Files to communicate with gnuplot
+datasets/tmp*

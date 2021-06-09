@@ -5,18 +5,16 @@
 #include <fstream>
 #include <cmath>
 #include <string.h>
+#include <memory>
 
 #include "Wektor3D.hh"
 #include "MacierzObrotu.hh"
 #include "Bryla_Geometryczna.hh"
 #include "Prostopadloscian.hh"
 #include "Graniastoslup6.hh"
+#include "Ruch.hh"
 #include "lacze_do_gnuplota.hh"
-
-struct Ruch {
-  double katObrotu;
-  double odleglosc;
-};
+#include "Sciezka.hh"
 
 /**
  * Rzuca wyjątkiem nr. 1 jeśli nie uda się wczytać brył tworzących dron
@@ -27,6 +25,7 @@ class Dron {
     Prostopadloscian korpus;
     Graniastoslup6 rotory[4];
     Wektor3D przesuniecieGlobalne;
+    Sciezka* sciezka;
     double obrotLokalny;
     std::list <Ruch> zaplanowaneRuchy;
     double predkoscKatowa;
@@ -37,6 +36,8 @@ class Dron {
      * Konstruktor parametryczny inicjujący rysowanie drona w danym łączu do gnuplota
      */
     Dron(PzG::LaczeDoGNUPlota& lacze, int numerDrona);
+    Dron(const Dron& dron);
+    ~Dron();
     Wektor3D zwrocWektorPrzesuniecia();
     void przesun(const Wektor3D &wektor);
     void ustawPrzesuniecie(const Wektor3D &wektor);
@@ -50,7 +51,6 @@ class Dron {
     bool ustawPredkoscLiniowa(double nowaPredkosc);
     bool wykonajKrok(double fps); // zwraca false gdy już nie ma kroków do wykonania
     bool rysuj(PzG::LaczeDoGNUPlota& lacze);
-    void wykonajPrzelotZwiadowczy();
 };
 
 #endif

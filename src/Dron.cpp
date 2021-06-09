@@ -65,6 +65,12 @@ Dron::Dron(PzG::LaczeDoGNUPlota& lacze, int numerDrona)
   this->rotory[3].przesunWzgledemUkladuRodzica(this->korpus[7]);
   this->predkoscKatowa = 180;
   this->predkoscLiniowa = 100;
+  this->sciezka = new Sciezka(lacze);
+}
+
+Dron::~Dron()
+{
+  delete this->sciezka;
 }
 
 Wektor3D Dron::zwrocWektorPrzesuniecia()
@@ -100,11 +106,19 @@ void Dron::ustawObrot(double kat)
 bool Dron::dodajPrzelot(double kat, double odleglosc)
 {
   Ruch nowyRuch;
+  Wektor3D wzniesienie;
+  Wektor3D ladowanie;
+  wzniesienie[2] = 100;
+  ladowanie[2] = -100;
   if(odleglosc < 0)                              // Zwrócenie false jeśli długość przelotu jest ujemna
     return false;
   nowyRuch.katObrotu = kat;
   nowyRuch.odleglosc = odleglosc;
   this->zaplanowaneRuchy.push_back(nowyRuch);    // Dodawanie ruchu na koniec listy zaplanowanych ruchów
+  nowyRuch.katObrotu += this->obrotLokalny;                                    // Dodawanie do kąta obrotu ścieżki kąt obrotu lokalnego drona
+  this->sciezka->dodajWektor(this->przesuniecieGlobalne, wzniesienie);         // Tworzenie ścieżki reprezentującej wznoszenie się drona
+  this->sciezka->dodajRuch(this->przesuniecieGlobalne, nowyRuch);              // Tworzenie ścieżki reprezentującej przelot drona
+  this->sciezka->dodajWektor(this->przesuniecieGlobalne, ladowanie);           // Tworzenie ścieżki reprezentującej lądowanie drona
   return true;
 }
 
@@ -154,6 +168,7 @@ bool Dron::wykonajKrok(double fps)
       }
       return true;
     }
+    this->sciezka->usunSciezke();
     return false;
   }
 
@@ -223,14 +238,4 @@ bool Dron::rysuj(PzG::LaczeDoGNUPlota& lacze)
     return false;
   lacze.Rysuj();
   return true;
-}
-
-void Dron::wykonajPrzelotZwiadowczy()
-{
-  this->dodajPrzelot(0, 10);
-  this->dodajPrzelot(90, 0);
-  for(int x = 0; x < 72; ++x)
-    this->dodajPrzelot(5, 1);
-  this->dodajPrzelot(90, 10);
-  this->dodajPrzelot(180, 0);
 }

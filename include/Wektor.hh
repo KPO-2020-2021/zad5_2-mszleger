@@ -162,6 +162,18 @@ class Wektor {
     }
 
     /**
+     * \brief Przeciążenie operatora dodającego do siebie dwa wektory i przypisującego wynik do pierwszego z nich
+     * 
+     * Operator dodaje do siebie wartości o tym samym indeksie obu wektorów i zwraca strukturę z otrzymanymi wartościami.
+     * Operator przypisuje wynik operacji do pierwszego z wektorów.
+     */
+    Wektor <rozmiar_wektora, typ_wartosci>& operator += (const Wektor <rozmiar_wektora, typ_wartosci> &wektor2)
+    {
+      *this = *this + wektor2;
+      return *this;
+    }
+
+    /**
      * \brief Przeciążenie operatora odejmującego od siebie dwa wektory
      * 
      * Operator odejmuje wektor drugi (z prawej strony) od pierwszego wektora (z lewej strony).

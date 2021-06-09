@@ -42,3 +42,10 @@ void generujMacierzObrotu(MacierzObrotu &macierz, double kat, Os os)
     break;
   }
 }
+
+Macierz3X3 generujMacierzObrotu(double kat, Os os)
+{
+  Macierz3X3 macierz;
+  generujMacierzObrotu(macierz, kat, os);
+  return macierz;
+}

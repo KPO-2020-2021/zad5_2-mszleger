@@ -16,12 +16,10 @@ Scena::Scena()
   double wspolrzedne1[] = {-10,0,0};
   Wektor3D przesuniecie0(wspolrzedne0);
   Wektor3D przesuniecie1(wspolrzedne1);
-  Dron nowyDron1(lacze, this->drony.size());
-  drony.push_back(nowyDron1);
-  Dron nowyDron2(lacze, this->drony.size());
-  drony.push_back(nowyDron2);
-  drony[0].ustawPrzesuniecie(przesuniecie0);
-  drony[1].ustawPrzesuniecie(przesuniecie1);
+  drony.push_back(std::make_shared<Dron>(lacze, this->drony.size()));
+  drony.push_back(std::make_shared<Dron>(lacze, this->drony.size()));
+  drony[0]->ustawPrzesuniecie(przesuniecie0);
+  drony[1]->ustawPrzesuniecie(przesuniecie1);
   this->rysujPodloze();
 }
 
@@ -64,9 +62,9 @@ void Scena::animuj()
   while(!czyZankonczonoRysowanie)
   {
     czyZankonczonoRysowanie = true;
-    for(Dron &dron : drony)
+    for(std::shared_ptr<Dron>& dron : drony)
     {
-      if(dron.wykonajKrok(20) == true)
+      if(dron->wykonajKrok(20) == true)
         czyZankonczonoRysowanie = false;
     }
     this->wyswietl();
@@ -76,15 +74,15 @@ void Scena::animuj()
 
 bool Scena::wyswietl()
 {
-  for(Dron & dron : this->drony)
-    dron.rysuj(lacze);
+  for(std::shared_ptr<Dron>& dron : this->drony)
+    dron->rysuj(lacze);
   lacze.Rysuj();
   return true;
 }
 
 void Scena::gdzieDron(int numerDrona)
 {
-  Wektor3D wektorPrzesuniecia = this->drony[numerDrona].zwrocWektorPrzesuniecia();
+  Wektor3D wektorPrzesuniecia = this->drony[numerDrona]->zwrocWektorPrzesuniecia();
   if((wektorPrzesuniecia[0] < 0.001) && (wektorPrzesuniecia[0] > -0.001))
     wektorPrzesuniecia[0] = 0;
   if((wektorPrzesuniecia[1] < 0.001) && (wektorPrzesuniecia[1] > -0.001))

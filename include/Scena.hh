@@ -32,7 +32,7 @@ class Scena {
     int minz;
     int maxz;
   public:
-    std::vector <Dron> drony;
+    std::vector <std::shared_ptr <Dron>> drony;
     /**
      * \brief Konstruktor bezparametryczny
      * 

@@ -52,6 +52,7 @@ set(SOURCES          # All .cpp files in src/
     src/MacierzObrotu.cpp
     src/Prostopadloscian.cpp
     src/Scena.cpp
+    src/Sciezka.cpp
     src/Wektor.cpp
     src/Wektor3D.cpp
 )

@@ -15,4 +15,9 @@ typedef Macierz3X3 MacierzObrotu;
  */
 void generujMacierzObrotu(MacierzObrotu &macierz, double kat, Os os);
 
+/**
+ * Funkcja zwraca wygenerowaną macierz obrotu o podany kąt wokół danej osi
+ */
+Macierz3X3 generujMacierzObrotu(double kat, Os os);
+
 #endif
