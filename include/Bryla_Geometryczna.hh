@@ -123,7 +123,7 @@ class Bryla_Geometryczna {
     /**
      * \brief Zapisuje w danym pliku opis bryły wykorzystywany przez gnuplota do narysowania danej bryły
      */
-    bool zapiszWspolrzedneDoWyswietlenia(MacierzObrotu &obrotUkladuRodzicaWzgledemUkladuGlobalnego, Wektor3D &przesuniecieUkladuRodzicaWzgledemUkladuGlobalnego);
+    bool zapiszWspolrzedneDoWyswietlenia(const MacierzObrotu &obrotUkladuRodzicaWzgledemUkladuGlobalnego, const Wektor3D &przesuniecieUkladuRodzicaWzgledemUkladuGlobalnego);
 
     /**
      * \brief Metoda obracająca środek lokalnego układu współrzędny bryły o daną macierz obrotu
@@ -149,6 +149,15 @@ class Bryla_Geometryczna {
     * \brief Przeciążenie operatora indeksującego zwracającego wektor danego wierzchołka względem układu lokalnego
     */
     Wektor3D operator [] (unsigned int indeks) const {return this->wierzcholki[indeks];}
+
+    /**
+     * Metoda skaluje figurę w poszczególnych osiach danymi parametrami
+     */
+    void skaluj(double skalaOX, double skalaOY, double skalaOZ);
+
+    virtual void wyswietlNazwe() const;
+    
+    virtual void deformuj();
 };
 
 #endif

@@ -31,3 +31,13 @@ bool Prostopadloscian::wczytajBryleWzorcowa()
   plik.close();                                  // Zamykanie pliku
   return true;                                   // Zwracanie true
 }
+
+void Prostopadloscian::wyswietlNazwe() const
+{
+  std::cout << "Prostopadłościan";
+}
+
+void Prostopadloscian::deformuj()
+{
+
+}

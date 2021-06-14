@@ -30,33 +30,18 @@ static void PokazRaport()
 
 int main()
 {
-  /*
-  Wektor3D wektor1;
-  Wektor3D wektor2;
-  Wektor3D wektor3;
-  Wektor3D wektor4;
-
-  wektor2[0] = 10;
-  wektor3[1] = 10;
-  wektor4[2] = 10;
-
-  PzG::LaczeDoGNUPlota lacze;
-
-  lacze.ZmienTrybRys(PzG::TR_3D);
-  lacze.UstawZakresX(-20,20);
-  lacze.UstawZakresY(-20,20);
-  lacze.UstawZakresZ(-20,20);
-
-  Sciezka sciezka(lacze);
-  sciezka.dodajWektor(wektor1, wektor2);
-  sciezka.dodajWektor(wektor1, wektor3);
-  sciezka.dodajWektor(wektor1, wektor4);
-  lacze.Rysuj();
-
-  std::cin >> wektor1;
-  */
-  
   Scena scena;
+   
+  Wektor3D wektor;
+  wektor[1] = 20;
+  scena.dodajPrzeszkode(1, wektor, 0, 1, 1, 5);
+  wektor[1] = 40;
+  scena.dodajPrzeszkode(2, wektor, 0, 1, 1, 5);
+  wektor[1] = 60;
+  scena.dodajPrzeszkode(3, wektor, 0, 1, 1, 5);
+  wektor[0] = 20;
+  scena.dodajPrzeszkode(3, wektor, 0, 1, 1, 5);
+  
   scena.wyswietl();
   Ruch nowyRuch;
   char wybor;
@@ -72,9 +57,10 @@ int main()
     std::cout << std::endl << std::endl;
     std::cout << "Twoj wybor, m - menu > ";
     std::cin >> wybor;
+
     switch (wybor)
     {
-    case 'a':
+    case 'a': /* Wybór aktywnego drona */
       std::cout << std::endl << "Wybor aktywnego drona" << std::endl << std::endl;
       for(int numerDrona = 0; numerDrona < static_cast<int>(scena.drony.size()); ++numerDrona)
       {
@@ -89,7 +75,7 @@ int main()
       --numerAktywnegoDrona;
       std::cout << std::endl;
       break;
-    case 'p':
+    case 'p': /* Zadanie przelotu drona */
       std::cout << "Podaj kierunek lotu (kat w stopniach) > ";
       std::cin >> nowyRuch.katObrotu;
       std::cout << "                   Podaj długość lotu > ";
@@ -100,16 +86,16 @@ int main()
       scena.animuj();
       std::cout << "Dron wyladowal ..." << std::endl;
       break;
-    case 'd':
+    case 'd': /* Dodawanie elementu powierzchni */
       break;
-    case 'u':
+    case 'u': /* Usuwanie elementu powierzchni */
       break;
-    case 'z':
+    case 'z': /* Przesówanie elementu powierzchni */
       break;
-    case 'm':
+    case 'm': /* Wyświetlenie menu */
       wyswietlMenu();
       break;
-    case 'k':
+    case 'k': /* Zakończenie pracy programu */
       return 0;
       break;
     

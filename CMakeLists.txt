@@ -45,11 +45,14 @@ find_lto(CXX)
 set(SOURCES          # All .cpp files in src/
     src/Bryla_Geometryczna.cpp
     src/Dron.cpp
+    src/GoraZGrania.cpp
+    src/GoraZOstrymSzczytem.cpp
     src/Graniastoslup6.cpp
     src/lacze_do_gnuplota
     src/Macierz.cpp
     src/Macierz3x3.cpp
     src/MacierzObrotu.cpp
+    src/Plaskowyz.cpp
     src/Prostopadloscian.cpp
     src/Scena.cpp
     src/Sciezka.cpp

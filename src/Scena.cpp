@@ -89,3 +89,50 @@ void Scena::gdzieDron(int numerDrona)
     wektorPrzesuniecia[1] = 0;
   std::cout << wektorPrzesuniecia[0] << " " << wektorPrzesuniecia[1];
 }
+
+bool Scena::dodajPrzeszkode(unsigned int typPrzeszkody, const Wektor3D& przesuniecie, double kat, double skalaOX, double skalaOY, double skalaOZ)
+{
+  std::string nazwaPliku = "../datasets/tmp_przeszkoda_" + std::to_string(przeszkody.size() + 1) + ".dat"; // Tworzenie nazwy pliku przechowywującego dane potrzebne do rysowania
+  switch (typPrzeszkody)
+  {
+  case 1:
+    przeszkody.push_back(std::make_shared <GoraZOstrymSzczytem>());     // Dodawanie nowej przeszkody do listy przeszkód - Góry z ostrym szczytem
+    break;
+  case 2:
+    przeszkody.push_back(std::make_shared <GoraZGrania>());     // Dodawanie nowej przeszkody do listy przeszkód - Góry z granią
+    break;
+  case 3:
+    przeszkody.push_back(std::make_shared <Plaskowyz>());     // Dodawanie nowej przeszkody do listy przeszkód - Płaskowyżu
+    break;
+  default:
+    return false;
+    break;
+  }
+  przeszkody.back()->ustawNazwePlikuBrylaWzorcowa("../datasets/prostopadloscian.dat"); // Wczytywanie bryły wzorcowej
+  przeszkody.back()->ustawNazwePlikuBrylaFinalna(nazwaPliku);        // Podawanie nazwy pliku roboczego bryły
+  if(przeszkody.back()->wczytajBryleWzorcowa() == false) return false; // Wczytywanie bryły wzorcowej - zwracanie false jeśli się nie udało
+  przeszkody.back()->skaluj(skalaOX, skalaOY, skalaOZ);              // Skalowanie byryły przed dodaniem
+  przeszkody.back()->deformuj();                                     // Deformowanie nowoutworzonej figury
+  if(przeszkody.back()->zapiszWspolrzedneDoWyswietlenia(generujMacierzObrotu(kat, OZ), przesuniecie) == false) return false; // Zapisywanie danych do wyświetlenia
+  lacze.DodajNazwePliku(nazwaPliku.c_str());                         // Dodawanie nazwy pliku roboczego do gnuplota
+  return true;                                                       // Zwracanie true jeśli udało się dodać przeszkodę
+}
+
+bool Scena::przesunPrzeszkode(unsigned int numerPrzeszkody, const Wektor3D& przesuniecie, double kat)
+{
+  if((numerPrzeszkody > przeszkody.size()) && (numerPrzeszkody != 0)) return false;        // Zwracanie false jeśli wykonano próbę usunięcia nieistniejącej przeszkody
+  std::list<std::shared_ptr <Bryla_Geometryczna>>::iterator iterator = przeszkody.begin(); // Tworzenie wskaźnika na dany element przeszkody
+  std::advance(iterator, --numerPrzeszkody);
+  iterator->get()->zapiszWspolrzedneDoWyswietlenia(generujMacierzObrotu(kat, OZ), przesuniecie); // Zapisywanie figury w nowej pozycji
+  return true;                                                                             // Zwracanie true
+}
+
+bool Scena::usunPrzeszkode(unsigned int numerPrzeszkody)
+{
+  if((numerPrzeszkody > przeszkody.size()) && (numerPrzeszkody != 0)) return false;        // Zwracanie false jeśli wykonano próbę usunięcia nieistniejącej przeszkody
+  std::list<std::shared_ptr <Bryla_Geometryczna>>::iterator iterator = przeszkody.begin(); // Tworzenie wskaźnika na dany element przeszkody
+  std::advance(iterator, --numerPrzeszkody);
+  iterator->get()->wyczyscWspolrzedneDoWyswietlenia();                                     // Usuwanie danych do wyświetlania, żeby gnuplot nie wyświetlał więcej pliku
+  przeszkody.erase(iterator);                                                              // Usuwanie danej przeszkody
+  return true;                                                                             // Zwracanie true
+}

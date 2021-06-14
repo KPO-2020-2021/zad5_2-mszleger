@@ -14,7 +14,9 @@
 #include "Graniastoslup6.hh"
 #include "lacze_do_gnuplota.hh"
 #include "Dron.hh"
-
+#include "GoraZOstrymSzczytem.hh"
+#include "GoraZGrania.hh"
+#include "Plaskowyz.hh"
 
 /**
  * \brief Klasa opisuje przestrzeń, w której znajdują się dane obiekty
@@ -31,6 +33,7 @@ class Scena {
     int maxy;
     int minz;
     int maxz;
+    std::list <std::shared_ptr <Bryla_Geometryczna>> przeszkody;
   public:
     std::vector <std::shared_ptr <Dron>> drony;
     /**
@@ -48,6 +51,11 @@ class Scena {
     void animuj();
     bool wyswietl();
     void gdzieDron(int numerDrona);
+
+    bool dodajPrzeszkode(unsigned int typPrzeszkody, const Wektor3D& przesuniecie, double kat = 0, double skalaOX = 1, double skalaOY = 1, double skalaOZ = 1);
+    bool przesunPrzeszkode(unsigned int numerPrzeszkody, const Wektor3D& przesuniecie, double kat);
+    bool usunPrzeszkode(unsigned int numerPrzeszkody);
+
 };
 
 #endif

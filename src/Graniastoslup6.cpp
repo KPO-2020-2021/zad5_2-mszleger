@@ -43,3 +43,13 @@ bool Graniastoslup6::wczytajBryleWzorcowa()
   plik.close();                                  // Zamykanie pliku
   return true;                                   // Zwracanie true
 }
+
+void Graniastoslup6::wyswietlNazwe() const
+{
+  std::cout << "Graniastosłup 6";
+}
+
+void Graniastoslup6::deformuj()
+{
+
+}

@@ -141,7 +141,7 @@ bool Bryla_Geometryczna::wyczyscWspolrzedneDoWyswietlenia()
   return true;                                                       // Zwracanie true
 }
 
-bool Bryla_Geometryczna::zapiszWspolrzedneDoWyswietlenia(MacierzObrotu &obrotUkladuRodzicaWzgledemUkladuGlobalnego, Wektor3D &przesuniecieUkladuRodzicaWzgledemUkladuGlobalnego)
+bool Bryla_Geometryczna::zapiszWspolrzedneDoWyswietlenia(const MacierzObrotu &obrotUkladuRodzicaWzgledemUkladuGlobalnego, const Wektor3D &przesuniecieUkladuRodzicaWzgledemUkladuGlobalnego)
 {
   if(czyPoprawnieWczytany == false)                                  // Zwracanie false jeśli spróbowano wyświetlić obiekt nieprawidłowo wczytany
     return false;
@@ -190,4 +190,24 @@ bool Bryla_Geometryczna::przesunWzgledemUkladuRodzica(const Wektor3D &wektorTran
 const Wektor3D& Bryla_Geometryczna::zwrocWektorTranslacjiWzgledemUkladuRodzica()
 {
   return this->przesuniecieWzgledemUkladuRodzica;
+}
+
+void Bryla_Geometryczna::skaluj(double skalaOX, double skalaOY, double skalaOZ)
+{
+  for(Wektor3D &wierzcholek : wierzcholki)
+  {
+    wierzcholek[0] *= skalaOX;
+    wierzcholek[1] *= skalaOY;
+    wierzcholek[2] *= skalaOZ;
+  }
+}
+
+void Bryla_Geometryczna::wyswietlNazwe() const
+{
+  std::cout << "Bryła geometryczna";
+}
+    
+void Bryla_Geometryczna::deformuj()
+{
+  
 }
