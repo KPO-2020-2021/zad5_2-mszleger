@@ -108,6 +108,7 @@ bool Scena::dodajPrzeszkode(unsigned int typPrzeszkody, const Wektor3D& przesuni
     return false;
     break;
   }
+  polozeniePrzeszkod.push_back(przesuniecie);                        // Zapisywanie wektora położenia nowej figury
   przeszkody.back()->ustawNazwePlikuBrylaWzorcowa("../datasets/prostopadloscian.dat"); // Wczytywanie bryły wzorcowej
   przeszkody.back()->ustawNazwePlikuBrylaFinalna(nazwaPliku);        // Podawanie nazwy pliku roboczego bryły
   if(przeszkody.back()->wczytajBryleWzorcowa() == false) return false; // Wczytywanie bryły wzorcowej - zwracanie false jeśli się nie udało
@@ -124,6 +125,9 @@ bool Scena::przesunPrzeszkode(unsigned int numerPrzeszkody, const Wektor3D& prze
   std::list<std::shared_ptr <Bryla_Geometryczna>>::iterator iterator = przeszkody.begin(); // Tworzenie wskaźnika na dany element przeszkody
   std::advance(iterator, --numerPrzeszkody);
   iterator->get()->zapiszWspolrzedneDoWyswietlenia(generujMacierzObrotu(kat, OZ), przesuniecie); // Zapisywanie figury w nowej pozycji
+  std::list<Wektor3D>::iterator iteratorWektoraPolozenia = polozeniePrzeszkod.begin();     // Tworzenie iteratora na listę wektorów położenia danej figury
+  std::advance(iteratorWektoraPolozenia, numerPrzeszkody);                                 // Przesunięcie iteratora na wektor położenia obecnie przesuwanej figury
+  *iteratorWektoraPolozenia = przesuniecie;                                                // Zapisywanie nowego wektora położenia
   return true;                                                                             // Zwracanie true
 }
 
@@ -134,5 +138,20 @@ bool Scena::usunPrzeszkode(unsigned int numerPrzeszkody)
   std::advance(iterator, --numerPrzeszkody);
   iterator->get()->wyczyscWspolrzedneDoWyswietlenia();                                     // Usuwanie danych do wyświetlania, żeby gnuplot nie wyświetlał więcej pliku
   przeszkody.erase(iterator);                                                              // Usuwanie danej przeszkody
+  std::list<Wektor3D>::iterator iteratorWektoraPolozenia = polozeniePrzeszkod.begin();     // Tworzenie iteratora na listę wektorów położenia danej figury
+  std::advance(iteratorWektoraPolozenia, numerPrzeszkody);                                 // Przesunięcie iteratora na wektor położenia obecnie usuwanej figury
+  polozeniePrzeszkod.erase(iteratorWektoraPolozenia);                                      // Usuwanie wektora położenia
   return true;                                                                             // Zwracanie true
+}
+
+void Scena::wypiszElementyPowierzchni()
+{
+  unsigned int numer = 0;
+  std::list<Wektor3D>::iterator iteratorWektoraPolozenia = polozeniePrzeszkod.begin();     // Tworzenie iteratora na listę wektorów położenia danej figury
+  for(const std::shared_ptr<Bryla_Geometryczna>& bryla : przeszkody)
+  {
+    std::cout << ++numer << " - (" << *(iteratorWektoraPolozenia++) << ") ";
+    bryla->wyswietlNazwe();
+    std::cout << std::endl;
+  }
 }

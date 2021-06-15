@@ -33,6 +33,7 @@ class Scena {
     int maxy;
     int minz;
     int maxz;
+    std::list <Wektor3D> polozeniePrzeszkod;
     std::list <std::shared_ptr <Bryla_Geometryczna>> przeszkody;
   public:
     std::vector <std::shared_ptr <Dron>> drony;
@@ -55,7 +56,7 @@ class Scena {
     bool dodajPrzeszkode(unsigned int typPrzeszkody, const Wektor3D& przesuniecie, double kat = 0, double skalaOX = 1, double skalaOY = 1, double skalaOZ = 1);
     bool przesunPrzeszkode(unsigned int numerPrzeszkody, const Wektor3D& przesuniecie, double kat);
     bool usunPrzeszkode(unsigned int numerPrzeszkody);
-
+    void wypiszElementyPowierzchni();
 };
 
 #endif

@@ -26,7 +26,12 @@ static void PokazRaport()
 //  std::cout << "  Laczna ilosc obiektow Wektor3D: " << iloscStworzonych << std::endl;
 }*/
 
-
+void wypisztypyElementowPowierzchni()
+{
+  std::cout << "1 - Gora z ostrym sztytem" << std::endl;
+  std::cout << "2 - Gora z grania" << std::endl;
+  std::cout << "3 - Plaskowyz" << std::endl;
+}
 
 int main()
 {
@@ -45,6 +50,15 @@ int main()
   scena.wyswietl();
   Ruch nowyRuch;
   char wybor;
+  int numerWybranegoTypu = 0;
+  int numerWybranegoElementu = 0;
+  Wektor3D wektorPrzesuniecia;
+  double wektorX = 0;
+  double wektorY = 0;
+  double katObrotu = 0;
+  double skalaOX = 0;
+  double skalaOY = 0;
+  double skalaOZ = 0;
   int numerAktywnegoDrona = 0;
 
   wyswietlMenu();
@@ -87,10 +101,96 @@ int main()
       std::cout << "Dron wyladowal ..." << std::endl;
       break;
     case 'd': /* Dodawanie elementu powierzchni */
+      std::cout << "Wybierz rodzaj powierzchniowego elementu" << std::endl;
+      wypisztypyElementowPowierzchni();
+      while(true)
+      {
+        std::cout << "Wprowadz numer typu elementu > ";
+        std::cin >> numerWybranegoTypu;
+        if(std::cin.fail() == false)
+        {
+          std::cout << "Podaj scale wzdluz kolejnych osi OX, OY, OZ." << std::endl;
+          std::cout << "Wprowadz skale: OX OY OZ > ";
+          std::cin >> skalaOX >> skalaOY >> skalaOZ;
+        }
+        if(std::cin.fail() == false)
+        {
+          std::cout << "Podaj wspolrzedne srodka podstawy x,y." << std::endl;
+          std::cout << "Wprowadz wspolrzedne: x y > ";
+          std::cin >> wektorX >> wektorY;
+        }
+        if(std::cin.fail() == false)
+        {
+          std::cout << "Podaj kąt obrotu elementu > ";
+          std::cin >>katObrotu;
+        }
+        if(std::cin.fail() == false)
+        {
+          wektorPrzesuniecia[0] = wektorX;
+          wektorPrzesuniecia[1] = wektorY;
+          wektorPrzesuniecia[2] = 0;
+          if(scena.dodajPrzeszkode(numerWybranegoTypu, wektorPrzesuniecia, katObrotu, skalaOX, skalaOY, skalaOZ))
+            break;
+        }
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+        std::cout << "Podano niepoprawne parametry!" << std::endl;
+      }
+
+
+
+
+      std::cout << std::endl << "Element zostal dodany do sceny." << std::endl;
+      scena.wyswietl();
       break;
     case 'u': /* Usuwanie elementu powierzchni */
+      std::cout << "Wybierz element powierzchni do usuniecia:" << std::endl;
+      scena.wypiszElementyPowierzchni();
+      while(true)
+      {
+        std::cout << "Podaj numer elementu > ";
+        std::cin >> numerWybranegoElementu;
+        if(std::cin.fail() == false)
+          if(scena.usunPrzeszkode(numerWybranegoElementu))
+            break;
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+        std::cout << "Podano niepoprawny numer!" << std::endl;
+      }
+      std::cout << std::endl << "Element zostal usuniety." << std::endl;
+      scena.wyswietl();
       break;
     case 'z': /* Przesówanie elementu powierzchni */
+      std::cout << "Wybierz element powierzchni do przesunięcia:" << std::endl;
+      scena.wypiszElementyPowierzchni();
+      while(true)
+      {
+        std::cout << "Podaj numer elementu > ";
+        std::cin >> numerWybranegoElementu;
+        if(std::cin.fail() == false)
+        {
+          std::cout << "Podaj wektor przesunięcia > ";
+          std::cin >> wektorX >> wektorY;
+        }
+        if(std::cin.fail() == false)
+        {
+          std::cout << "Podaj kąt obrotu elementu > ";
+          std::cin >>katObrotu;
+        }
+        if(std::cin.fail() == false)
+        {
+          wektorPrzesuniecia[0] = wektorX;
+          wektorPrzesuniecia[1] = wektorY;
+          wektorPrzesuniecia[2] = 0;
+          if(scena.przesunPrzeszkode(numerWybranegoElementu, wektorPrzesuniecia, katObrotu))
+            break;
+        }
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+        std::cout << "Podano niepoprawne parametry!" << std::endl;
+      }
+      std::cout << std::endl << "Element zostal przesuniety." << std::endl;
+      scena.wyswietl();
       break;
     case 'm': /* Wyświetlenie menu */
       wyswietlMenu();
@@ -104,7 +204,4 @@ int main()
       break;
     }
   }
-
-
-  
 }
