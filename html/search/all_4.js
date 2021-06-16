@@ -3,6 +3,7 @@ var searchData=
   ['dec',['DEC',['../_c_make_c_x_x_compiler_id_8cpp.html#ad1280362da42492bbc11aa78cbf776ad',1,'CMakeCXXCompilerId.cpp']]],
   ['decomp_5fassert',['decomp_assert',['../namespacedoctest_1_1detail.html#ae397f06265ddf12044fb34e5cd38506f',1,'doctest::detail']]],
   ['deepestsubcasestacknames',['deepestSubcaseStackNames',['../doctest_8cpp.html#a1445e3a531cd00ec6ad073984a7426bb',1,'doctest.cpp']]],
+  ['deformuj',['deformuj',['../class_bryla___geometryczna.html#a854627b03b439f05cd387dde76b4d189',1,'Bryla_Geometryczna::deformuj()'],['../class_gora_z_grania.html#a611857b4d7be768d7b37ed7e7fe746cc',1,'GoraZGrania::deformuj()'],['../class_gora_z_ostrym_szczytem.html#a112b50900ccba1756dc4f039d4ea6e88',1,'GoraZOstrymSzczytem::deformuj()'],['../class_graniastoslup6.html#ae99db66df01cc1d820a137d6f577920c',1,'Graniastoslup6::deformuj()'],['../class_plaskowyz.html#a4dceb76ad5dd98e33d7644c639de4d8b',1,'Plaskowyz::deformuj()'],['../class_prostopadloscian.html#afca4f871e8c84426e10a849bd15bd73b',1,'Prostopadloscian::deformuj()']]],
   ['detail',['detail',['../namespacedoctest_1_1detail.html',1,'doctest']]],
   ['details',['details',['../doctest_8cpp.html#adfd48101c5417e0d6fa1c59b9dffbeaa',1,'doctest.cpp']]],
   ['doctest',['doctest',['../namespacedoctest.html',1,'']]],
@@ -29,10 +30,13 @@ var searchData=
   ['doctest_5fto_5fstring_5foverload',['DOCTEST_TO_STRING_OVERLOAD',['../doctest_8cpp.html#aae8013349d220f6e9013be3eb937f88d',1,'doctest.cpp']]],
   ['dodajnazwepliku',['DodajNazwePliku',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a34bd48f57c0fd69c12bf4127a1cacd8f',1,'PzG::LaczeDoGNUPlota']]],
   ['dodajprzelot',['dodajPrzelot',['../class_dron.html#ab2021fc39200d211e87fee28687bb049',1,'Dron']]],
+  ['dodajprzeszkode',['dodajPrzeszkode',['../class_scena.html#a3862a7bbaff7b1a4dbd471dd4d8f62f0',1,'Scena']]],
+  ['dodajruch',['dodajRuch',['../class_sciezka.html#a319831f155a1d94fb94dde527f05adb0',1,'Sciezka']]],
+  ['dodajwektor',['dodajWektor',['../class_sciezka.html#a331532de1b4494c0cd1f0150c8a31c6c',1,'Sciezka']]],
   ['dopiszplikidopoleceniarysowania',['DopiszPlikiDoPoleceniaRysowania',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a25585ec3f1bd3b6bf42f374c38b8d237',1,'PzG::LaczeDoGNUPlota']]],
   ['dopiszrysowaniezplikow',['DopiszRysowanieZPlikow',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#ad3d7607946b82aa941d786dcd086d27e',1,'PzG::LaczeDoGNUPlota']]],
-  ['dron',['Dron',['../class_dron.html',1,'Dron'],['../class_dron.html#ac50306c744325df6129e2952cf0e980a',1,'Dron::Dron()']]],
+  ['dron',['Dron',['../class_dron.html',1,'Dron'],['../class_dron.html#ac50306c744325df6129e2952cf0e980a',1,'Dron::Dron(PzG::LaczeDoGNUPlota &amp;lacze, int numerDrona)'],['../class_dron.html#ac5e608e07ed38ca1558dd94cfc88881f',1,'Dron::Dron(const Dron &amp;dron)']]],
   ['dron_2ecpp',['Dron.cpp',['../_dron_8cpp.html',1,'']]],
   ['dron_2ehh',['Dron.hh',['../_dron_8hh.html',1,'']]],
-  ['drony',['drony',['../class_scena.html#a50d64e9e9b0233b6d5b3c040361afc2b',1,'Scena']]]
+  ['drony',['drony',['../class_scena.html#a295071432714954ea7f68afc7e601b61',1,'Scena']]]
 ];

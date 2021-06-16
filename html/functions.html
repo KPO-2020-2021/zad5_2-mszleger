@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sterowanie uproszczonym dronem latającym - Faza 1: Składowe klas</title>
+<title>Sterowanie uproszczonym dronem latającym - Faza 2: Składowe klas</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sterowanie uproszczonym dronem latającym - Faza 1
+   <div id="projectname">Sterowanie uproszczonym dronem latającym - Faza 2
    </div>
   </td>
  </tr>
@@ -155,11 +155,28 @@ $(function() {
 
 
 <h3><a id="index_d"></a>- d -</h3><ul>
+<li>deformuj()
+: <a class="el" href="class_bryla___geometryczna.html#a854627b03b439f05cd387dde76b4d189">Bryla_Geometryczna</a>
+, <a class="el" href="class_gora_z_grania.html#a611857b4d7be768d7b37ed7e7fe746cc">GoraZGrania</a>
+, <a class="el" href="class_gora_z_ostrym_szczytem.html#a112b50900ccba1756dc4f039d4ea6e88">GoraZOstrymSzczytem</a>
+, <a class="el" href="class_graniastoslup6.html#ae99db66df01cc1d820a137d6f577920c">Graniastoslup6</a>
+, <a class="el" href="class_plaskowyz.html#a4dceb76ad5dd98e33d7644c639de4d8b">Plaskowyz</a>
+, <a class="el" href="class_prostopadloscian.html#afca4f871e8c84426e10a849bd15bd73b">Prostopadloscian</a>
+</li>
 <li>DodajNazwePliku()
 : <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a34bd48f57c0fd69c12bf4127a1cacd8f">PzG::LaczeDoGNUPlota</a>
 </li>
 <li>dodajPrzelot()
 : <a class="el" href="class_dron.html#ab2021fc39200d211e87fee28687bb049">Dron</a>
+</li>
+<li>dodajPrzeszkode()
+: <a class="el" href="class_scena.html#a3862a7bbaff7b1a4dbd471dd4d8f62f0">Scena</a>
+</li>
+<li>dodajRuch()
+: <a class="el" href="class_sciezka.html#a319831f155a1d94fb94dde527f05adb0">Sciezka</a>
+</li>
+<li>dodajWektor()
+: <a class="el" href="class_sciezka.html#a331532de1b4494c0cd1f0150c8a31c6c">Sciezka</a>
 </li>
 <li>DopiszPlikiDoPoleceniaRysowania()
 : <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a25585ec3f1bd3b6bf42f374c38b8d237">PzG::LaczeDoGNUPlota</a>
@@ -171,7 +188,7 @@ $(function() {
 : <a class="el" href="class_dron.html#ac50306c744325df6129e2952cf0e980a">Dron</a>
 </li>
 <li>drony
-: <a class="el" href="class_scena.html#a50d64e9e9b0233b6d5b3c040361afc2b">Scena</a>
+: <a class="el" href="class_scena.html#a295071432714954ea7f68afc7e601b61">Scena</a>
 </li>
 </ul>
 
@@ -267,6 +284,9 @@ $(function() {
 <li>operator+()
 : <a class="el" href="class_wektor.html#a64a4e0125ad731f207b3f342be863192">Wektor&lt; rozmiar_wektora, typ_wartosci &gt;</a>
 </li>
+<li>operator+=()
+: <a class="el" href="class_wektor.html#aa60742ce47bea8f53333425bcf1308cc">Wektor&lt; rozmiar_wektora, typ_wartosci &gt;</a>
+</li>
 <li>operator-()
 : <a class="el" href="class_wektor.html#a31482c42e6b9795f490c786d7b24e84a">Wektor&lt; rozmiar_wektora, typ_wartosci &gt;</a>
 </li>
@@ -299,6 +319,9 @@ $(function() {
 </li>
 <li>przesuniecieWzgledemUkladuRodzica
 : <a class="el" href="class_bryla___geometryczna.html#ae47fd0574d5a9a8b68b187d9f0637b87">Bryla_Geometryczna</a>
+</li>
+<li>przesunPrzeszkode()
+: <a class="el" href="class_scena.html#a56154bae889e91adcee1b2801662d489">Scena</a>
 </li>
 <li>przesunWzgledemUkladuRodzica()
 : <a class="el" href="class_bryla___geometryczna.html#adc8ec2b5f166fe1d35c979d7e49bbbee">Bryla_Geometryczna</a>
@@ -338,11 +361,17 @@ $(function() {
 <li>sciany
 : <a class="el" href="class_bryla___geometryczna.html#a2e5ff7b4090eb4d00674b2a662caee21">Bryla_Geometryczna</a>
 </li>
+<li>Sciezka()
+: <a class="el" href="class_sciezka.html#abe2bc74330a2829b842d689e7458cd51">Sciezka</a>
+</li>
 <li>SkalaX()
 : <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a4b1eb252fd785a5aeff938e7b2dce2b1">PzG::LaczeDoGNUPlota</a>
 </li>
 <li>SkalaZ()
 : <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a44f922ccbc508d6cd7809c669238dae3">PzG::LaczeDoGNUPlota</a>
+</li>
+<li>skaluj()
+: <a class="el" href="class_bryla___geometryczna.html#aaaf92c1d2ef7f9f03eab9ad50683a3c2">Bryla_Geometryczna</a>
 </li>
 </ul>
 
@@ -401,6 +430,12 @@ $(function() {
 <li>UsunOstatniaNazwe()
 : <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a75f599f17413ea8602c6dbba09f36407">PzG::LaczeDoGNUPlota</a>
 </li>
+<li>usunPrzeszkode()
+: <a class="el" href="class_scena.html#acf3f982ca8260ea090f7825ac4a47256">Scena</a>
+</li>
+<li>usunSciezke()
+: <a class="el" href="class_sciezka.html#aeb19b90c1abb03b957062736bc0de95d">Sciezka</a>
+</li>
 <li>UsunWszystkieNazwyPlikow()
 : <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a89a1d90d017d264cd26398464d074073">PzG::LaczeDoGNUPlota</a>
 </li>
@@ -441,14 +476,22 @@ $(function() {
 <li>wykonajKrok()
 : <a class="el" href="class_dron.html#aa1b8f192e1361c9537cddb5e64e7f31b">Dron</a>
 </li>
-<li>wykonajPrzelotZwiadowczy()
-: <a class="el" href="class_dron.html#a2bfc514502dc1ce62af9f6a9364395d0">Dron</a>
+<li>wypiszElementyPowierzchni()
+: <a class="el" href="class_scena.html#a1453451c0200dc09982f533446ff4125">Scena</a>
 </li>
 <li>wyswietl()
 : <a class="el" href="class_scena.html#acdd8dad0dac987168299afe18728e249">Scena</a>
 </li>
 <li>WyswietlajKomunikatyBledow()
 : <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a4531e6d166faf2e2c8bb4a54a9c9e1f8">PzG::LaczeDoGNUPlota</a>
+</li>
+<li>wyswietlNazwe()
+: <a class="el" href="class_bryla___geometryczna.html#a4265618a0f432b73c52ea3aad33bb756">Bryla_Geometryczna</a>
+, <a class="el" href="class_gora_z_grania.html#a6e439b39d2ba60cc6536cab64f051bde">GoraZGrania</a>
+, <a class="el" href="class_gora_z_ostrym_szczytem.html#ad7ac1e2d7cdb3ecf4e12bd8d5935c008">GoraZOstrymSzczytem</a>
+, <a class="el" href="class_graniastoslup6.html#ae7bf72f38756f09a1bda472d134d50cf">Graniastoslup6</a>
+, <a class="el" href="class_plaskowyz.html#a9d897c991729efd860a5c6ed42d3adaa">Plaskowyz</a>
+, <a class="el" href="class_prostopadloscian.html#a7e352528e1cc45bdfe4cd17d6754678b">Prostopadloscian</a>
 </li>
 </ul>
 
@@ -474,6 +517,9 @@ $(function() {
 
 
 <h3><a id="index_z"></a>- z -</h3><ul>
+<li>zapiszDoPliku()
+: <a class="el" href="class_sciezka.html#a4932682dd7cf02cffedafacb75574655">Sciezka</a>
+</li>
 <li>ZapiszUstawienieRotacjiISkali()
 : <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#aa92b463e8cbae31b50dd797a4183bce8">PzG::LaczeDoGNUPlota</a>
 </li>
@@ -481,7 +527,7 @@ $(function() {
 : <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a4579aecf7b4777fdde0cae4e98c275c2">PzG::LaczeDoGNUPlota</a>
 </li>
 <li>zapiszWspolrzedneDoWyswietlenia()
-: <a class="el" href="class_bryla___geometryczna.html#a503345e0c96fba8e2d7c467998174b88">Bryla_Geometryczna</a>
+: <a class="el" href="class_bryla___geometryczna.html#af45d05b26cec0d17858063e82602344b">Bryla_Geometryczna</a>
 </li>
 <li>Zmax()
 : <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#a20a5d03e1fc19c682032bffc54340f12">PzG::LaczeDoGNUPlota</a>
@@ -523,11 +569,23 @@ $(function() {
 
 
 <h3><a id="index_0x7e"></a>- ~ -</h3><ul>
+<li>~Dron()
+: <a class="el" href="class_dron.html#ad810924ca47e7cd55631a652403483e8">Dron</a>
+</li>
 <li>~ErrnoGuard()
 : <a class="el" href="classdoctest_1_1detail_1_1_errno_guard.html#a47239272e4e1ea56dd16b07c06fe3a6a">doctest::detail::ErrnoGuard</a>
 </li>
+<li>~GoraZGrania()
+: <a class="el" href="class_gora_z_grania.html#ad5701770c1c1d9797e9582678307aeb4">GoraZGrania</a>
+</li>
+<li>~GoraZOstrymSzczytem()
+: <a class="el" href="class_gora_z_ostrym_szczytem.html#a13c0e2ecba7ef99a9293fc2ea481e906">GoraZOstrymSzczytem</a>
+</li>
 <li>~LaczeDoGNUPlota()
 : <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html#afc10ec7f193032ecae714f6d832dcbf0">PzG::LaczeDoGNUPlota</a>
+</li>
+<li>~Plaskowyz()
+: <a class="el" href="class_plaskowyz.html#ac634d7babed1b278c0619252c41b9d1e">Plaskowyz</a>
 </li>
 <li>~Wektor()
 : <a class="el" href="class_wektor.html#ab35c9f27b368772bbf4fd501c9347f47">Wektor&lt; rozmiar_wektora, typ_wartosci &gt;</a>

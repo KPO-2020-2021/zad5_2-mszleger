@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['wektor_2ecpp',['Wektor.cpp',['../src_2_wektor_8cpp.html',1,'(Globalna przestrzeń nazw)'],['../tests_2_wektor_8cpp.html',1,'(Globalna przestrzeń nazw)']]],
-  ['wektor_2ehh',['Wektor.hh',['../_wektor_8hh.html',1,'']]],
-  ['wektor3d_2ecpp',['Wektor3D.cpp',['../_wektor3_d_8cpp.html',1,'']]],
-  ['wektor3d_2ehh',['Wektor3D.hh',['../_wektor3_d_8hh.html',1,'']]]
+  ['scena_2ecpp',['Scena.cpp',['../_scena_8cpp.html',1,'']]],
+  ['scena_2ehh',['Scena.hh',['../_scena_8hh.html',1,'']]],
+  ['sciezka_2ecpp',['Sciezka.cpp',['../_sciezka_8cpp.html',1,'']]],
+  ['sciezka_2ehh',['Sciezka.hh',['../_sciezka_8hh.html',1,'']]]
 ];

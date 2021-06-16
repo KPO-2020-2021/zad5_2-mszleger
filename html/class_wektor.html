@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Sterowanie uproszczonym dronem latającym - Faza 1: Dokumentacja szablonu klasy Wektor&lt; rozmiar_wektora, typ_wartosci &gt;</title>
+<title>Sterowanie uproszczonym dronem latającym - Faza 2: Dokumentacja szablonu klasy Wektor&lt; rozmiar_wektora, typ_wartosci &gt;</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,7 +21,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Sterowanie uproszczonym dronem latającym - Faza 1
+   <div id="projectname">Sterowanie uproszczonym dronem latającym - Faza 2
    </div>
   </td>
  </tr>
@@ -100,6 +100,9 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:a64a4e0125ad731f207b3f342be863192"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_wektor.html">Wektor</a>&lt; rozmiar_wektora, typ_wartosci &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wektor.html#a64a4e0125ad731f207b3f342be863192">operator+</a> (const <a class="el" href="class_wektor.html">Wektor</a>&lt; rozmiar_wektora, typ_wartosci &gt; &amp;wektor2) const</td></tr>
 <tr class="memdesc:a64a4e0125ad731f207b3f342be863192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przeciążenie operatora dodającego do siebie dwa wektory.  <a href="#a64a4e0125ad731f207b3f342be863192">Więcej...</a><br /></td></tr>
 <tr class="separator:a64a4e0125ad731f207b3f342be863192"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa60742ce47bea8f53333425bcf1308cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_wektor.html">Wektor</a>&lt; rozmiar_wektora, typ_wartosci &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wektor.html#aa60742ce47bea8f53333425bcf1308cc">operator+=</a> (const <a class="el" href="class_wektor.html">Wektor</a>&lt; rozmiar_wektora, typ_wartosci &gt; &amp;wektor2)</td></tr>
+<tr class="memdesc:aa60742ce47bea8f53333425bcf1308cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przeciążenie operatora dodającego do siebie dwa wektory i przypisującego wynik do pierwszego z nich.  <a href="#aa60742ce47bea8f53333425bcf1308cc">Więcej...</a><br /></td></tr>
+<tr class="separator:aa60742ce47bea8f53333425bcf1308cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31482c42e6b9795f490c786d7b24e84a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_wektor.html">Wektor</a>&lt; rozmiar_wektora, typ_wartosci &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_wektor.html#a31482c42e6b9795f490c786d7b24e84a">operator-</a> (const <a class="el" href="class_wektor.html">Wektor</a>&lt; rozmiar_wektora, typ_wartosci &gt; &amp;wektor2) const</td></tr>
 <tr class="memdesc:a31482c42e6b9795f490c786d7b24e84a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Przeciążenie operatora odejmującego od siebie dwa wektory.  <a href="#a31482c42e6b9795f490c786d7b24e84a">Więcej...</a><br /></td></tr>
 <tr class="separator:a31482c42e6b9795f490c786d7b24e84a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -361,6 +364,37 @@ template&lt;unsigned int rozmiar_wektora, class typ_wartosci&gt; </div>
 
 <p>Przeciążenie operatora dodającego do siebie dwa wektory. </p>
 <p>Operator dodaje do siebie wartości o tym samym indeksie obu wektorów i zwraca strukturę z otrzymanymi wartościami. </p>
+
+</div>
+</div>
+<a id="aa60742ce47bea8f53333425bcf1308cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa60742ce47bea8f53333425bcf1308cc">&#9670;&nbsp;</a></span>operator+=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int rozmiar_wektora, class typ_wartosci&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_wektor.html">Wektor</a>&lt;rozmiar_wektora, typ_wartosci&gt;&amp; <a class="el" href="class_wektor.html">Wektor</a>&lt; rozmiar_wektora, typ_wartosci &gt;::operator+= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_wektor.html">Wektor</a>&lt; rozmiar_wektora, typ_wartosci &gt; &amp;&#160;</td>
+          <td class="paramname"><em>wektor2</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Przeciążenie operatora dodającego do siebie dwa wektory i przypisującego wynik do pierwszego z nich. </p>
+<p>Operator dodaje do siebie wartości o tym samym indeksie obu wektorów i zwraca strukturę z otrzymanymi wartościami. Operator przypisuje wynik operacji do pierwszego z wektorów. </p>
 
 </div>
 </div>

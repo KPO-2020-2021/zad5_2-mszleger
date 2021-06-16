@@ -8,6 +8,9 @@
 #include "Wektor3D.hh"
 #include "MacierzObrotu.hh"
 
+/**
+ * \brief Klasa modelująca ścianę bryły - klasa zawiera numery wierzchołków tworzących daną ścianę
+ */
 class Sciana {
   public:
     unsigned int wierzcholki[4];
@@ -155,8 +158,14 @@ class Bryla_Geometryczna {
      */
     void skaluj(double skalaOX, double skalaOY, double skalaOZ);
 
+    /**
+     * \brief Metoda wirtualna wyświetlająca nazwę danej klasy
+     */
     virtual void wyswietlNazwe() const;
     
+    /**
+     * \brief Metoda wirtualna deformująca w odpowiedni sposób prostopadłościan tak, aby otrzymać rządany obiekt np. górę z ostrym szczytem
+     */
     virtual void deformuj();
 };
 

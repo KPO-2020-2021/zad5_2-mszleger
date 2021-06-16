@@ -14,9 +14,21 @@
 class Sciezka 
 {
   private:
+    /**
+     * Zmienna statyczna przechowywująca ilość utworzonych elementów danego typu
+     */
 	  static unsigned int iloscUtworzonychObiektow;
+    /**
+     * Zmienna przechowywująca numer ścieżki
+     */
 	  const unsigned int numerSciezki;
+    /**
+     * Zmienna przechowywująca przesunięcie początku ścieżki względem środka układu współrzędnych
+     */
 	  Wektor3D poczatek;
+    /**
+     * Lista przechowywująca wektory tworzące ścieżkę
+     */
 	  std::list <Wektor3D> sciezka;
     /**
      * Metoda zwraca nazwę pliku do komunikacji z gnuplotem danej ścieżki.

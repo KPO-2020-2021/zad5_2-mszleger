@@ -10,7 +10,8 @@ var searchData=
   ['rr_5fciagly',['RR_Ciagly',['../namespace_pz_g.html#a705c92106f39b7d0c34a6739d10ff0b6a927eaa159aa4bd3198f0a330b967746d',1,'PzG']]],
   ['rr_5fpunktowy',['RR_Punktowy',['../namespace_pz_g.html#a705c92106f39b7d0c34a6739d10ff0b6aa01097ee8266d6402b752ef6f9a4690c',1,'PzG']]],
   ['ruch',['Ruch',['../struct_ruch.html',1,'']]],
-  ['rysuj',['Rysuj',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335',1,'PzG::LaczeDoGNUPlota::Rysuj()'],['../class_dron.html#a82806ec7a0333e0be4a0eb3fe1e3882d',1,'Dron::rysuj()']]],
+  ['ruch_2ehh',['Ruch.hh',['../_ruch_8hh.html',1,'']]],
+  ['rysuj',['rysuj',['../class_dron.html#a82806ec7a0333e0be4a0eb3fe1e3882d',1,'Dron::rysuj()'],['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335',1,'PzG::LaczeDoGNUPlota::Rysuj()']]],
   ['rysujdopliku',['RysujDoPliku',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#addae9ac156ae2fb227f792faff3aa148',1,'PzG::LaczeDoGNUPlota']]],
   ['rysujpodloze',['rysujPodloze',['../class_scena.html#a1c698b67f7b1f390e5fd6d986184d0f8',1,'Scena']]]
 ];

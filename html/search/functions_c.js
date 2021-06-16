@@ -5,5 +5,6 @@ var searchData=
   ['pokazos_5foz',['PokazOs_OZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9fabfe88cb1801a5de8923f45f514b99',1,'PzG::LaczeDoGNUPlota::PokazOs_OZ(bool Pokaz)'],['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a22c708af33c57bf3b5d1b4e82b4017b7',1,'PzG::LaczeDoGNUPlota::PokazOs_OZ() const']]],
   ['przeslijdognuplota',['PrzeslijDoGNUPlota',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a5063854b7232a7951d120a21df63f2b7',1,'PzG::LaczeDoGNUPlota']]],
   ['przesun',['przesun',['../class_dron.html#a90e1c53170a6ba35acd9bc1737b34058',1,'Dron']]],
+  ['przesunprzeszkode',['przesunPrzeszkode',['../class_scena.html#a56154bae889e91adcee1b2801662d489',1,'Scena']]],
   ['przesunwzgledemukladurodzica',['przesunWzgledemUkladuRodzica',['../class_bryla___geometryczna.html#adc8ec2b5f166fe1d35c979d7e49bbbee',1,'Bryla_Geometryczna']]]
 ];

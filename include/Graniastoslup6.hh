@@ -30,7 +30,15 @@ class Graniastoslup6 : public Bryla_Geometryczna {
      * \brief Wczytuje wierzchołki granaiastosłupa z sześciokątem w podstawie z pliku i ustawia kontener przechowujący konfiguracje wierzchołków tworzących poszczególne klasy.
      */
     bool wczytajBryleWzorcowa();
+
+    /**
+     * Metoda wirtualna wyświetlająca nazwę klasy
+     */
     virtual void wyswietlNazwe() const override;
+
+    /**
+     * Metoda wirtualna deformująca prostopadłościan w taki sposób, aby powstała góra z ostrym szczytem
+     */
     virtual void deformuj() override;
 };
 

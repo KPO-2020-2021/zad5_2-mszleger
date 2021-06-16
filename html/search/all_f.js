@@ -1,5 +1,8 @@
 var searchData=
 [
+  ['plaskowyz',['Plaskowyz',['../class_plaskowyz.html',1,'']]],
+  ['plaskowyz_2ecpp',['Plaskowyz.cpp',['../_plaskowyz_8cpp.html',1,'']]],
+  ['plaskowyz_2ehh',['Plaskowyz.hh',['../_plaskowyz_8hh.html',1,'']]],
   ['platform_5fid',['PLATFORM_ID',['../_c_make_c_x_x_compiler_id_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'CMakeCXXCompilerId.cpp']]],
   ['pokazos_5fox',['PokazOs_OX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a11421d7c67deab6b7524cc492407e897',1,'PzG::LaczeDoGNUPlota::PokazOs_OX(bool Pokaz)'],['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#ae112972af57167c3b053bf922bce6bbf',1,'PzG::LaczeDoGNUPlota::PokazOs_OX() const']]],
   ['pokazos_5foy',['PokazOs_OY',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a7c3db909b266fc30808e86406c04b516',1,'PzG::LaczeDoGNUPlota::PokazOs_OY(bool Pokaz)'],['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a7298f469f6932f5c808dcf620650b4b8',1,'PzG::LaczeDoGNUPlota::PokazOs_OY() const']]],
@@ -12,6 +15,7 @@ var searchData=
   ['przeslijdognuplota',['PrzeslijDoGNUPlota',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a5063854b7232a7951d120a21df63f2b7',1,'PzG::LaczeDoGNUPlota']]],
   ['przesun',['przesun',['../class_dron.html#a90e1c53170a6ba35acd9bc1737b34058',1,'Dron']]],
   ['przesunieciewzgledemukladurodzica',['przesuniecieWzgledemUkladuRodzica',['../class_bryla___geometryczna.html#ae47fd0574d5a9a8b68b187d9f0637b87',1,'Bryla_Geometryczna']]],
+  ['przesunprzeszkode',['przesunPrzeszkode',['../class_scena.html#a56154bae889e91adcee1b2801662d489',1,'Scena']]],
   ['przesunwzgledemukladurodzica',['przesunWzgledemUkladuRodzica',['../class_bryla___geometryczna.html#adc8ec2b5f166fe1d35c979d7e49bbbee',1,'Bryla_Geometryczna']]],
   ['pzg',['PzG',['../namespace_pz_g.html',1,'']]]
 ];
